@@ -22,7 +22,7 @@ void aufgabe1_Gr1() {
 	short z = 500; //char Werte bereich geht nicht bis 500 => größerer Datentyp
 	long count = 0; // in Ordnung
 	int big = 33333; // short Werte bereich zu klein => nächst größeren Datentyp nehmen
-	signed char ch = '\205'; //Oktal(Basis8) für à ( a mit accent de gue)
+	unsigned char ch = '\205'; //Oktal(Basis8) für à ( a mit accent de gue)
 	signed int size = -40000; // Vorzeichenbehaftet, dürfte bei UNsigned nicht negativ werden
 	double first_value = 1.23E+5; //darf nicht mit leerzeichen getrennt werden. 
 	double fläche = 99999999.99; // meckert nicht aber genauigkeit nur auf 7 stellen, rundet auf
@@ -119,7 +119,7 @@ void aufgabe4_Gr1() {
 
 int main() {
 	
-	//aufgabe1_Gr1();
+	aufgabe1_Gr1();
 	//aufgabe1_Gr3();
 	//aufgabe2_Gr1();
 	//aufgabe2_Gr3();
