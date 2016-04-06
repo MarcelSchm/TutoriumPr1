@@ -22,12 +22,30 @@ void aufgabe1_Gr1() {
 	short z = 500; //char Werte bereich geht nicht bis 500 => größerer Datentyp
 	long count = 0; // in Ordnung
 	int big = 33333; // short Werte bereich zu klein => nächst größeren Datentyp nehmen
-	signed char ch = '\205';
+	signed char ch = '\205'; //Oktal(Basis8) für à ( a mit accent de gue)
 	signed int size = -40000; // Vorzeichenbehaftet, dürfte bei UNsigned nicht negativ werden
 	double first_value = 1.23E+5; //darf nicht mit leerzeichen getrennt werden. 
-	double fläche = 99999999.99; // meckert nicht aber genauigkeit nur auf 7 stellen 
+	double fläche = 99999999.99; // meckert nicht aber genauigkeit nur auf 7 stellen, rundet auf
 	printf("a=%f \nb=%c \nc=%c \nz=%d \ncount=%d \nbig=%d \n", a, b, c, z, count, big);
-	printf("ch=%d \nsize=%d \nfirst_value=%f \nfl\x84 \bche=%f\n", ch, size, first_value, fläche);
+	printf("ch=%c \nsize=%d \nfirst_value=%f \nfl\x84 \bche=%f\n", ch, size, first_value, fläche);
+
+}
+
+void aufgabe1_Gr3() {
+
+	float a = 2.5; // funktioniert so, aber nicht schön. konvertiert komma zahl zu ganzer zahl(sicherlich nicht so beabsichtigt) a=2
+	int b = '?'; // ASCII Zeichen & als Dezimal abgespeichert( ?=63
+	short z = 500; //char Werte bereich geht nicht bis 500 => größerer Datentyp
+	int big = 40000; // short Werte bereich zu klein => nächst größeren Datentyp nehmen
+	double fläche = 1.23E+5; //geht
+	long count = 0; // in Ordnung
+	char c = '\''; // c=39, ASCI Zeichen Apostroph(mit backslash als escape sequenz)
+	unsigned char ch = '\201'; //Oktal(basis8) für ü
+	unsigned int size = 40000;//richtig
+	double first_value = 12345.06789; //darf nicht mit leerzeichen getrennt werden. zu ungenau, deswegen double
+	
+	printf("a=%f \nb=%c \nz=%d \nbig=%d \nfl%cche=%f \ncount=%d \n", a, b, z, big, ae, fläche, count);
+	printf("c=%c \nch=%c \nsize=%d \nfirst_value=%f\n", c, ch, size, first_value);
 
 }
 
@@ -100,12 +118,14 @@ void aufgabe4_Gr1() {
 
 
 int main() {
+	
 	//aufgabe1_Gr1();
+	//aufgabe1_Gr3();
 	//aufgabe2_Gr1();
 	//aufgabe2_Gr3();
 	//aufgabe3_Gr1_Kugel();
 	//aufgabe3_Volumen_Quader();
-	aufgabe4_Gr1();
+	//aufgabe4_Gr1();
 
 	system("pause");
 }
