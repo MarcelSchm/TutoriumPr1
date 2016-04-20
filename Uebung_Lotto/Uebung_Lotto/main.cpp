@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <iostream>
 
 #pragma warning (disable:4996)  // beschissene scanf warnung aus
 #define ue 129
@@ -65,7 +67,7 @@ int main() {
 	initArray(ziehung);
 	show(ziehung);
 
-	printf(\n"Herzlichen Gl%cckwunsch! Sie haben %d Richtige!\n",ue, treffer(ziehung, tippschein));
+	printf("\nHerzlichen Gl%cckwunsch! Sie haben %d Richtige!\n",ue, treffer(ziehung, tippschein));
 
 
 	system("pause");
