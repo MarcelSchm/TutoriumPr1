@@ -2,11 +2,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 void aufgabe2() {
 	int x = 3, y = 7, z;
 	z = y-- - x;
 	printf("x=%d y=%d z=%d\n", x, y, z);
+}
+void InBinaer(int x) {
+	__int16 zahl = 0;// spezieller Datentyp, integer hat nur 16 bit (um prinzip zu zeigen sonst wird es unübersichtlich)
+	//unterscheidung ob positiv oder negativ. bei positiv normal rechnen, bei negativ invertieren und das ergebnis
+	//auch wieder invertieren
+	if (x < 0) {
+		 zahl = ~x;
+	}
+	else  zahl = x;
+
+	int array[16] = { 0 }; //zwischenspeicher der zahlen da von unten nach oben lesen
+	for (int i = 0; i < 16; i++) {  //Umrechnung in binär
+		array[i] = zahl % 2; // Mit Modulo gucken ob glatt teilbar oder rest...diesen ausgeben (sozusagen das letzte bit betrachten)
+		zahl = zahl >> 1; //alles um eins nach rechts schieben
+
+	}
+	for (int j = 15; j >= 0; j--) {
+		if (x < 0) {  //Bei negativen Zahlen muss ausgabe invertiert werden
+			if (1==array[j]) { //wenn 1 dann invertieren...
+				printf("%d", 0);
+			}
+			else printf("%d", 1);// wenn null dann mach 1 draus
+		}
+		else printf("%d", array[j]);// bei normalen zahlen einfach array ausgeben
+	}
+	printf("\n");
 }
 
 void aufgabe3() {
@@ -18,6 +43,15 @@ void aufgabe3() {
 	printf(" z=%d a=%d b=%d c=%d \n", z, a, b, c);
 
 }
+void aufgabe4() {
+	__int8 x = -5;
+	__int8 y = ~(x);
+	x = x << 2;
+	InBinaer(x);
+	
+}
+
+
 void aufgabe5() {
 	int x = 0;
 	int zaehler = 1;
@@ -81,7 +115,8 @@ int main() {
 
 	//aufgabe2();
 	//aufgabe3();
-	aufgabe5();
+	aufgabe4();
+	//aufgabe5();
 
 
 	system("pause");
