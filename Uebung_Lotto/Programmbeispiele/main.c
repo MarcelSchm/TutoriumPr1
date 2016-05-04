@@ -132,6 +132,7 @@ int main(int argc, char *argv[]) {
 	int laufzeit;
 	int ausgeloescht = 0;
 
+
 	system("color F0");
 	Startbildschirm();
 	printf("/////////////////////////GAME OF LIFE/////////////////////////\n\n");
