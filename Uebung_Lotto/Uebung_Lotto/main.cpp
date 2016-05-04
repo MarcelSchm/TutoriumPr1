@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <iostream>
+#include <stdbool.h> // damit bool nutzbar ist
 
 #pragma warning (disable:4996)  // beschissene scanf warnung aus
 #define ue 129
@@ -16,6 +17,7 @@ bool check(int a[], int x) {
 }
 
 void initArray(int a[]) {
+	srand(time(NULL)); // zufallszahlen brauchen eine berechnungsgrundlage. hier wird die zeit zum Zeitpunkt null als quelle(seed) genommen 
 	int zufall = 0;
 	for (int i = 0; i < 6; i++) {
 
@@ -56,6 +58,9 @@ int main() {
 	int ziehung[6] = { 0 };
 	int tippschein[6] = { 0 };
 	printf("Geben sie Ihre Tipps ein:\n");
+
+	//in dieser schleife könnte man noch implementieren, dass keine doppelten Tipps eingetragen werden
+	// bis jetzt wird auf die gutmütigkkeit des Benutzers vertraut
 	for (int i = 0; i < 6; i++) {
 		printf("\nTipp Nr.%d:\t", i);
 		scanf("%d", &tippschein[i]);
@@ -64,10 +69,10 @@ int main() {
 	}
 
 	printf("\n\nDie Eingabe ist vollendet. Die Lottozahlen sind: \n");
-	initArray(ziehung);
-	show(ziehung);
+	initArray(ziehung); //Hier werden die zufälligen Lottozahlen bestimmt
+	show(ziehung); // Ausgabe in der Konsole der Lottozahlen
 
-	printf("\nHerzlichen Gl%cckwunsch! Sie haben %d Richtige!\n",ue, treffer(ziehung, tippschein));
+	printf("\nHerzlichen Gl%cckwunsch! Sie haben %d Richtige!\n",ue, treffer(ziehung, tippschein)); //Gewinnausschüttung
 
 
 	system("pause");
