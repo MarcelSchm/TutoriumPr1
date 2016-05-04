@@ -1,0 +1,44 @@
+﻿In einem Feld mit 6 Feldelementen sollen Lottozahlen abgelegt werden. 
+Anschließend soll mit einer weiteren Funktion geprüft werden wie viele
+ der Lottozahlen mit einem gegebenen Tippschein übereinstimmen. 
+Hinweis: Als Feldgröße wird für alle Aufgabenteile jeweils 6 angenommen. 
+
+
+a.      Schreiben Sie eine Funktion 
+bool check(int a[], int x), 
+in der geprüft wird, ob sich ein gegebener Wert x in dem Feld a 
+befindet. Ist dies der Fall, soll die Funktion den Wahrheitswert true
+ zurückgeben, ansonsten den Wert false. 
+
+
+b.      Schreiben Sie die Funktion 
+void initArray(int a[]), 
+die das Feld a mit 6 Zufallszahlen zwischen 1 und 49 füllt
+ (rand() liefert eine ganze Zahl zwischen 0 und RAND_MAX).
+ Prüfen Sie dabei, dass keine doppelten Werte im Feld abgelegt werden.
+ Sie können dafür die Funktion check nutzen. 
+
+
+c.      Die Funktion 
+void show(int a[]) 
+soll alle 6 Werte des Feldes a mit printf auf dem Bildschirm ausgeben. 
+
+
+d.      Schreiben Sie die Funktion 
+int treffer(int a[], int tippschein[]), 
+die das Feld a (6 Zufallszahlen zwischen 1 und 49 - das sind
+ die 6 gezogenen Lottozahlen) gegen einen gegebenen Tippschein
+ tippschein (Feld mit 6 Feldelementen) prüft. Es soll dabei gezählt
+ werden, wie viele gleiche Werte in den Lottozahlen und dem Tippschein
+ existieren. Geben Sie das Ergebnis an die aufrufende Funktion zurück. 
+
+
+e.      Schreiben sie die main()-Funktion, in der zwei statische Felder
+ (Ziehung und Tippschein) mit jeweils 6 Feldelementen deklariert werden.
+ Lesen Sie für den Tippschein 6 beliebige, zulässige und voneinander
+ verschiedene Werte ein. 
+Rufen sie für das andere Feld (Ziehung) die Funktion initArray auf, 
+um es mit zufälligen Lottozahlen zu füllen. 
+Geben Sie diese Ziehung der Lottozahlen mit Hilfe von show aus. 
+Prüfen Sie anschließend mit der Funktion treffer die beiden Felder 
+gegeneinander und geben Sie die Anzahl der gleichen Werte aus. 
