@@ -110,15 +110,29 @@ void aufgabe5() {
 
 
 }
+float wurzel(float quadrat, float Stellengenauigkeit) {
+	int x0 = 1;
+	float folge = 0;
+	folge = 0.5*(x0 + quadrat / x0);
+	double abweichung=10;
+	for (int i = 1; i<Stellengenauigkeit; i++) {
+		abweichung = abweichung * 10;
+	}
+	while (((folge*folge) - quadrat) > (1/abweichung)) {  // 7 Stellen genau => 10^-7 10^7 vorher berechnet, danach kehrwert
+		folge = 0.5*(folge + quadrat / folge);
+	}
+ return folge;
+
+}
 
 int main() {
 
 	//aufgabe2();
 	//aufgabe3();
-	aufgabe4();
+	//aufgabe4();
 	//aufgabe5();
-
-
+	wurzel(4, 2);
+	printf("Wurzel von 4 ist:  %f", wurzel(5, 7));
 	system("pause");
 	return 0;
 }
