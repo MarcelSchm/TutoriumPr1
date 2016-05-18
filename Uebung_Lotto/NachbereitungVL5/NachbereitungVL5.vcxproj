@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{0EFE92A0-E5C3-46CE-AD25-CADFECF57B10}</ProjectGuid>
+    <ProjectGuid>{6A7F8B29-7B72-41FD-A78C-F2D8DC09C476}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>NachbereitungVL4</RootNamespace>
+    <RootNamespace>NachbereitungVL5</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -146,10 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
