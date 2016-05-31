@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <assert.h>
 #pragma warning (disable:4996)  // beschissene scanf warnung aus
 #define ue 129
 
@@ -57,6 +58,7 @@ void aufgabe3() {
 	case 3: aufgabe3();
 		break;
 	default: printf("keine g%cltige Eingabe! Nochmal...\n\n", ue);
+		assert(eingabe == 5);
 		break;
 	}
 	} while (!(eingabe > 0 && eingabe < 4));
